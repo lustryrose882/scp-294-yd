@@ -7,6 +7,8 @@ using scp_294.Items;
 using scp_294.Events.EventArgs.Machines;
 using scp_294.Events.Handlers;
 using Exiled.API.Enums;
+using MapEditorReborn.Commands.ModifyingCommands.Position;
+using UnityEngine;
 
 namespace scp_294.Commands
 {
@@ -110,7 +112,21 @@ namespace scp_294.Commands
                 DispensedDrinkEventArgs dispensedDrinkEventArgs = new DispensedDrinkEventArgs(player, drink);
                 Log.Debug("Dispensed drink event about to be invoked...");
                 Machines.OnMachineDispensedDrink(dispensedDrinkEventArgs);
-                if (drink.ExtraEffects.ExplodeOnDispensing) Map.Explode(player.Position, ProjectileType.FragGrenade);
+                if (drink.ExtraEffects.ExplodeOnDispensing)
+                {
+                    for (int i = 0; i < 2; i++)
+                        Map.ExplodeEffect(player.Position, ProjectileType.FragGrenade);
+
+                    player.Explode(ProjectileType.FragGrenade);
+
+                    foreach (Player players in Player.List)
+                    {
+                        if (players.CurrentRoom == Machine.Room)
+                        {
+                            players.Explode(ProjectileType.Flashbang);
+                        }
+                    }
+                }
             }
             else
             {

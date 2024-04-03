@@ -51,49 +51,49 @@ namespace scp_294.Configs
         /// Gets or sets the hint shown upon entering the machine range.
         /// </summary>
         [Description("Message that appears once you approach Scp-294")]
-        public string ApproachMessage { get; set; } = "You have approached SCP-294. Use .scp294 to get a drink";
+        public string ApproachMessage { get; set; } = "SCP-294'ün yakınlarındasın. .scp294 yazarak kendine bir içecek al!";
 
         /// <summary>
         /// Gets or sets the hint shown upon entering the machine range while random mode is enabled.
         /// </summary>
         [Description("Message that appears once you approach Scp-294 with random mode enabled")]
-        public string ApproachMessageRandomMode { get; set; } = "You have approached SCP-294. However the keyboard is broken, use '.scp294' to get a random drink";
+        public string ApproachMessageRandomMode { get; set; } = "SCP-294'ün yakınlarındasın. Gör ki klavye bozuk, konsola .scp294 yazarak rastgele içecek al";
 
         /// <summary>
         /// Gets or sets the message that appears after you get a drink.
         /// </summary>
         [Description("Message that appears after you get a drink")]
-        public string EnjoyDrinkMessage { get; set; } = "<color=#00ff00>Enjoy your drink</color>";
+        public string EnjoyDrinkMessage { get; set; } = "<color=#00ff00>Tadını çıkar</color>";
 
         /// <summary>
         /// Gets or sets the message that appears if asked drink is not available.
         /// </summary>
         [Description("Message that appears if asked drink is not available")]
-        public string OutOfRange { get; set; } = "<color=#ff0000>Out of range</color>";
+        public string OutOfRange { get; set; } = "<color=#ff0000>Öyle bir içecek yok</color>";
 
         /// <summary>
         /// Gets or sets the message that appears when the player is out of range.
         /// </summary>
         [Description("Message that appears if player is out of range")]
-        public string PlayerOutOfRange { get; set; } = "<color=#ff0000>you are not close enough to the machine</color>";
+        public string PlayerOutOfRange { get; set; } = "<color=#ff0000>Makineye yakın değilsin</color>";
 
         /// <summary>
         /// Gets or sets the message that appears when the player is not holding a coin.
         /// </summary>
         [Description("Message that appears if player is not holding a coin")]
-        public string PlayerNotHoldingCoin { get; set; } = "<color=#ff0000>you need to be holding coin</color>";
+        public string PlayerNotHoldingCoin { get; set; } = "<color=#ff0000>Elinde para tutman lazım.</color>";
 
         /// <summary>
         /// Gets or sets the message that appears when an error occurs.
         /// </summary>
         [Description("Message that appears when an error occurs")]
-        public string ErrorMessage { get; set; } = "<color=#ff0000>error occurred</color>";
+        public string ErrorMessage { get; set; } = "<color=#ff0000>hata oluştu</color>";
 
         /// <summary>
         /// Gets or sets the message that contains the usage information.
         /// </summary>
         [Description("Message that appears if a player mistypes or uses the command incorrectly")]
-        public string UsageMessage { get; set; } = "<color=#ff0000>Incorrect Usage. Try .scp294 [drink you want]. You can also use .scp294 list to print every drink currently available. If random mode is enabled you should type only '.scp294' to get your random drink</color>";
+        public string UsageMessage { get; set; } = "<color=#ff0000>Hatalı kullanım. Konsola .scp294 [istediğin içecek] yazarak alabilirsin. Şu anda mevcut olan her içeceği yazdırmak için .scp294 listesini de kullanabilirsiniz. Rastgele mod etkinse, rastgele içeceğinizi almak için yalnızca '.scp294' yazmanız gerekir.</color>";
 
         /// <summary>
         /// Gets or sets the <see cref="DrinksConfig"> instance.

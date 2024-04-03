@@ -56,7 +56,7 @@ namespace scp_294.API.Features
         /// <summary>
         /// Gets or sets the <see cref="Room"/> the machine is in.
         /// </summary>
-        private Room Room { get; set; }
+        public static Room Room { get; set; }
 
         /// <summary>
         /// Gets or sets the <see cref="Position"/> the machine is in.
@@ -106,7 +106,7 @@ namespace scp_294.API.Features
         {
             foreach (Drink drink in drinks) RegisterDrink(drink);
         }
-
+  
         /// <summary>
         /// Unregisters every drink registered. Resets LookupIdTable, LookupStringTable, Drinks.
         /// </summary>

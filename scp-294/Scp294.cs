@@ -19,12 +19,12 @@ namespace scp_294
         /// <summary>
         /// Gets the name of the Author of the Plugin.
         /// </summary>
-        public override string Author => "batatas-fritas";
+        public override string Author => "batatas-fritas, avsar-usta";
 
         /// <summary>
         /// Gets the version of the Plugin.
         /// </summary>
-        public override Version Version => new Version(3, 0, 1);
+        public override Version Version => new Version(3, 0, 2);
 
         /// <summary>
         /// Gets the required Exiled Version of the Plugin.
