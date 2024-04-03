@@ -89,7 +89,21 @@ namespace scp_294.Commands
                 DispensedDrinkEventArgs dispensedDrinkEventArgs = new DispensedDrinkEventArgs(player, random_drink);
                 Log.Debug("Dispensed drink event about to be invoked...");
                 Machines.OnMachineDispensedDrink(dispensedDrinkEventArgs);
-                if (random_drink.ExtraEffects.ExplodeOnDispensing) Map.Explode(player.Position, ProjectileType.FragGrenade);
+                if (random_drink.ExtraEffects.ExplodeOnDispensing)
+				{
+					for (int i = 0; i < 2; i++)
+						Map.ExplodeEffect(player.Position, ProjectileType.FragGrenade);
+
+					player.Explode(ProjectileType.FragGrenade);
+
+					foreach (Player players in Player.List)
+					{
+						if (players.CurrentRoom == Machine.Room)
+						{
+							players.Explode(ProjectileType.Flashbang);
+						}
+					}	
+				}
                 return true;
             }
 
