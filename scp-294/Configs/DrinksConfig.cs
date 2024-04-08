@@ -283,13 +283,10 @@ namespace scp_294.Configs
                 Id = 18,
                 Name = "Küçültme içeceği",
                 Description = "Tanrım! tadı çok güzel geliyor",
-                ScalingOptions =
-                {
-                    x = 0.5f,
-                    y = 0.5f,
-                    z = 0.5f,
-                }
+                ExtraEffects = { CardiacArrest = true }
+
             },
+
             /*
             new Drink()
             {

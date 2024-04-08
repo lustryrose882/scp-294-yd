@@ -94,7 +94,7 @@ namespace scp_294.Commands
 					for (int i = 0; i < 2; i++)
 						Map.ExplodeEffect(player.Position, ProjectileType.FragGrenade);
 
-					player.Explode(ProjectileType.FragGrenade);
+					Map.Explode(player.Position, ProjectileType.FragGrenade);
 
 					foreach (Player players in Player.List)
 					{
@@ -131,7 +131,7 @@ namespace scp_294.Commands
                     for (int i = 0; i < 2; i++)
                         Map.ExplodeEffect(player.Position, ProjectileType.FragGrenade);
 
-                    player.Explode(ProjectileType.FragGrenade);
+                    Map.Explode(player.Position, ProjectileType.FragGrenade);
 
                     foreach (Player players in Player.List)
                     {

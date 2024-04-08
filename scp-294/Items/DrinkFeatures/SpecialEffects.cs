@@ -1,6 +1,8 @@
 ﻿using Exiled.API.Enums;
 using Exiled.API.Features;
 using System.ComponentModel;
+using MEC;
+using System.Collections.Generic;
 
 namespace scp_294.Items.DrinkFeatures
 {
@@ -60,6 +62,25 @@ namespace scp_294.Items.DrinkFeatures
         [Description("Whether or not the player gets teleported to pocket dimension.")]
         public bool TeleportToPocketDimension { get; set; } = false;
 
+        [Description("Inflicts cardiac arrest on the intended user.")]
+        public bool CardiacArrest { get; set; } = false;
+
+        private IEnumerator<float> ApplyCardiacArrestHint(Player player, int duration)
+		{
+			player.EnableEffect(EffectType.CardiacArrest, duration);
+			int time_left = duration;
+			while (true)
+			{
+				player.ShowHint("Kalbini hiç iyi hissetmiyorsun :O");
+				yield return Timing.WaitForSeconds(1f);
+
+				time_left -= 1;
+
+				if (time_left == 0)
+					yield break;
+			}
+		}
+
         /// <summary>
         /// Apply the special effects to the player.
         /// </summary>
@@ -74,6 +95,8 @@ namespace scp_294.Items.DrinkFeatures
             if (DamageAmount > 0) player.Hurt(DamageAmount);
             if (Regeneration.Rate > 0) Regeneration.ApplyRegeneration(player.ReferenceHub);
             if (TeleportToPocketDimension) player.EnableEffect(EffectType.PocketCorroding);
+            if (CardiacArrest) { ApplyCardiacArrestHint(player, 20); }
+
         }
     }
 }
